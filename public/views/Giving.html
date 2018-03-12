@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Giving</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <script src="../javascripts/Giving.js"></script>
+</head>
+<body ng-controller="givingController">
+    <div>
+       <div>
+           Choose you experties!
+       </div>
+        <div>
+            <table style="list-style: none">
+                <tr>
+                  <td ng-repeat="ex in experties">
+                   <button ng-click="chooseExp(ex)">
+                       {{ex}}
+                   </button>
+                   </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+           Choose your Sub Catagory!
+       </div>
+        <div>
+            <ul style="list-style: none">
+                <li ng-repeat="sub in catagoryList">
+                   <button ng-click="chooseSub(sub)">
+                       {{sub}}
+                   </button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            You have chosen : {{chosenSub}}!
+        </div>
+        <div>
+            Now choose the location (optional) :
+        </div>
+        <div>
+            And a time of your choice (optional) :
+        </div>
+        <div>
+            Are You Sure ?
+            <button ng-click="confirm()">Yes</button>
+            <button ng-click="DisConfirm()">No</button>
+        </div>
+    </div>
+</body>
+</html>
